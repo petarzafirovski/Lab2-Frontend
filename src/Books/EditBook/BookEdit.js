@@ -21,6 +21,7 @@ const BookEdit =(props)=>{
             [event.target.name] : event.target.value.trim()
         })
     }
+
     const onFormSubmit =(event)=>{
         event.preventDefault();
         const name = formData.name !== "" ? formData.name : props.book.name;
@@ -42,7 +43,6 @@ const BookEdit =(props)=>{
                                className="form-control"
                                id="name"
                                name="name"
-                               required
                                placeholder={props.book.name}
                                onChange={handleChangeEvent}
 
@@ -55,7 +55,7 @@ const BookEdit =(props)=>{
                                id="availableCopies"
                                name="availableCopies"
                                placeholder={props.book.availableCopies}
-                               required
+                               onChange={handleChangeEvent}
                                onChange={handleChangeEvent}
                         />
                     </div>
